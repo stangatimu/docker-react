@@ -1,0 +1,13 @@
+name: Deploy Frontend
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      - run: docker build -t stangatimu/docker-react -f Dockerfile.dev .
+      - run: docker run -e CI=true stangatimu/docker-react npm test
