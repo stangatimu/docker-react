@@ -1,16 +1,32 @@
 name: docker-react
 
+region: blr
+
 services:
-- name: web
+- name: docker-react
   image:
     registry: registry.digitalocean.com
     registry_type: DOCKER_REGISTRY
     repository: ${DO_REGISTRY_USERNAME}/docker-react
     tag: latest
   http_port: 80
+  instance_count: 2
+  instance_size_slug: apps-s-1vcpu-1gb
   health_check:
     http_path: /
     port: 80
   envs:
     - key: CI
       value: "true"
+
+ingress:
+  rules:
+    - component:
+        name: docker-react
+      match:
+        path:
+          prefix: /
+
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
