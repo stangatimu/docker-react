@@ -10,6 +10,7 @@ services:
   http_port: 80
   health_check:
     http_path: /
+    port: 80
   envs:
     - key: CI
       value: "true"
