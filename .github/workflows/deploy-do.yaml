@@ -1,7 +1,10 @@
 name: Deploy to DigitalOcean
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Run tests"]
+    types:
+      - completed
     branches:
       - main
 

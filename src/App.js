@@ -7,7 +7,6 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello World! From DigitalOcean</p>
-        <p>Testing autodeploy from GitHub Actions</p>
         <a
           className="App-link"
           href="https://reactjs.org"
