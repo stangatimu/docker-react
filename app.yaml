@@ -2,13 +2,12 @@ name: docker-react
 
 services:
 - name: web
-  github:
-    repo: stangatimu/docker-react
-    branch: main
-  build_command: npm run build
+  image:
+    registry: registry.digitalocean.com
+    registry_type: DOCKER_REGISTRY
+    repository: docker-react
+    tag: latest
   http_port: 3000
   envs:
     - key: CI
       value: "true"
-  dockerfile_path: Dockerfile
-  source_dir: /
