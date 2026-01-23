@@ -5,7 +5,7 @@ services:
   image:
     registry: registry.digitalocean.com
     registry_type: DOCKER_REGISTRY
-    repository: docker-react
+    repository: ${DO_REGISTRY_USERNAME}/docker-react
     tag: latest
   http_port: 80
   health_check:
