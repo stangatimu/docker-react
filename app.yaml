@@ -7,7 +7,7 @@ services:
     registry_type: DOCKER_REGISTRY
     repository: docker-react
     tag: latest
-  http_port: 3000
+  http_port: 80
   envs:
     - key: CI
       value: "true"
