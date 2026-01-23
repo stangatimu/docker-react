@@ -5,7 +5,6 @@ region: blr
 services:
 - name: docker-react
   image:
-    registry: registry.digitalocean.com
     registry_type: DOCR
     repository: ${DO_REGISTRY_USERNAME}/docker-react
     tag: latest
