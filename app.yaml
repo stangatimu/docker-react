@@ -6,8 +6,7 @@ services:
 - name: docker-react
   image:
     registry_type: DOCR
-    registry: ""
-    repository: stangatimu/docker-react
+    repository: docker-react
     tag: latest
   http_port: 80
   instance_count: 2
