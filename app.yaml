@@ -8,6 +8,8 @@ services:
     repository: docker-react
     tag: latest
   http_port: 80
+  health_check:
+    http_path: /
   envs:
     - key: CI
       value: "true"
